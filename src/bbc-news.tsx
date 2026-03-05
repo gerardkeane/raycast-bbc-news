@@ -97,10 +97,7 @@ export default function Command() {
               markdown={`## ${item.title}\n\n${item.description}`}
               metadata={
                 <List.Item.Detail.Metadata>
-                  <List.Item.Detail.Metadata.Label
-                    title="Published"
-                    text={new Date(item.pubDate).toLocaleString()}
-                  />
+                  <List.Item.Detail.Metadata.Label title="Published" text={new Date(item.pubDate).toLocaleString()} />
                   <List.Item.Detail.Metadata.Link title="Article" target={item.link} text="Open in Browser" />
                 </List.Item.Detail.Metadata>
               }
@@ -122,7 +119,11 @@ export default function Command() {
                 shortcut={{ modifiers: ["cmd"], key: "m" }}
                 onAction={() => markAsRead(item.link)}
               />
-              <Action.CopyToClipboard content={item.link} title="Copy Link" shortcut={{ modifiers: ["cmd"], key: "c" }} />
+              <Action.CopyToClipboard
+                content={item.link}
+                title="Copy Link"
+                shortcut={{ modifiers: ["cmd"], key: "c" }}
+              />
               <Action
                 title="Open All in Browser"
                 shortcut={{ modifiers: ["cmd", "shift"], key: "o" }}
